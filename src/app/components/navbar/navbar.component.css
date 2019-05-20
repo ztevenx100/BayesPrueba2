@@ -1,0 +1,154 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 16/09/2018, 09:59:36 PM
+    Author     : Steven
+*/
+
+html {
+  overflow-x: hidden;
+}
+
+/*-------------------------------------------------------------------------------
+        Barra de navegaciÃ³n
+-------------------------------------------------------------------------------*/
+
+.navbar {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 60px;
+}
+
+#nav-content {
+  padding: 10px 0;
+  height: 50px;
+}
+
+#nav-content .btn-user {
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+#nav-content .btn-user:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+#nav-content .btn-user .fa-user {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+#nav-content .btn-user .fa-user:hover {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+#login-dp {
+  min-width: 200px;
+  padding: 14px 14px 0;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.8);
+  left: auto;
+}
+
+#login-dp h6 {
+  color: #fff;
+  margin: 2px 0;
+}
+
+#login-dp .help-block a {
+  font-size: 12px;
+  text-decoration: none;
+  color: rgba(255, 225, 255, 0.8);
+}
+
+#login-dp .help-block a:hover {
+  color: #fff;
+}
+
+#login-dp .bottom {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  clear: both;
+  padding: 2px;
+  margin: 5px 0;
+}
+
+#login-dp .bottom a {
+  text-decoration: none;
+  color: rgba(255, 225, 255, 0.8);
+}
+
+#login-dp .bottom a:hover {
+  color: #fff;
+}
+
+#login-dp .social-buttons {
+  margin: 12px 0;
+}
+#login-dp .social-buttons a {
+  width: 49%;
+}
+#login-dp .form-group {
+  margin-bottom: 10px;
+}
+
+#login-dp .btn-fb {
+  color: #fff;
+  background-color: #3b5998;
+}
+#login-dp .btn-fb:hover {
+  color: #fff;
+  background-color: #496ebc;
+}
+#login-dp .btn-tw {
+  color: #fff;
+  background-color: #55acee;
+}
+#login-dp .btn-tw:hover {
+  color: #fff;
+  background-color: #59b5fa;
+}
+#login-dp .btn-join {
+  color: #fff;
+  background-color: #000;
+}
+#login-dp .btn-join:hover {
+  color: #000;
+  background-color: #fff;
+}
+
+#login-dp .btn-salir {
+  color: #fff;
+  background-color: #f00;
+}
+#login-dp .btn-salir:hover {
+  color: #f00;
+  background-color: #fff;
+}
+
+#login-dp label {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  #login-dp {
+    background-color: inherit;
+    color: #fff;
+  }
+  #login-dp .bottom {
+    background-color: inherit;
+    border-top: 0 none;
+  }
+}
+
+.form-email {
+  background-color: rgba(0, 0, 0, 0.3);
+  text-align: center;
+  color: #fff;
+  border-style: none;
+  border-radius: 5px;
+  padding: 5px 0;
+}
