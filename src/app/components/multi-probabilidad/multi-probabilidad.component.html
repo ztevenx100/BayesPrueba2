@@ -1,0 +1,39 @@
+<div class="form-group row">
+
+	<div class="col-2"></div>
+	<div class="col-4">
+		<input type="text" class="form-control" name="nMultiProbabilities" #nMultiProbabilities [(ngModel)]="nProbabilities"
+		 placeholder="NÂ° de probabilidades" onkeypress="return justNumbers(event);">
+		<div class="valid-feedback"></div>
+		<div class="invalid-feedback">Por favor digite un numero vÃ¡lido.</div>
+	</div>
+	<div class="btn col-4" name="multi-probabilidad" (click)="changeVisibility(visibleMultiPro)"> Multi-probabilidad</div>
+
+</div>
+
+<div *ngIf="visibleMultiPro">
+
+	<div *ngFor="let item of numberEvents( nProbabilities ); let j = index ">
+		<div class="form-group row">
+			<label for="form-pass" class="col-3 col-form-label">Nombre {{j+1}}</label>
+			<div class="col-6">
+				<input type="text" class="form-control" placeholder="Nombre" name="namePro" #namePro [(ngModel)]="name[setPosition(valorMultiPro,j)]">
+				<div class="valid-feedback"></div>
+				<div class="invalid-feedback">Por favor digite un numero vÃ¡lido.</div>
+			</div>
+			<div class="col-3">
+				<button (click)="setName(name[setPosition(valorMultiPro,j)],valorMultiPro,j)" class="btn btn-block">Guardar</button>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<div *ngFor="let item of namePro">{{item}}</div>
+
+<div class="form-group row mt-4">
+	<div class="col-4"></div>
+	<div class="col-4" *ngIf="nProbabilities > 0 && visibleMultiPro">
+		<button (click)="setEvents(valorMultiPro,nMultiProbabilities)" class="btn btn-block">Guardar</button>
+	</div>
+</div>

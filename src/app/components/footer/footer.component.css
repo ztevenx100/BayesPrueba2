@@ -1,0 +1,100 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 16/09/2018, 09:59:44 PM
+    Author     : Steven
+*/
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  min-height: 100vh;
+  flex-wrap: wrap;
+}
+
+/*-------------------------------------------------------------------------------
+        Footer
+-------------------------------------------------------------------------------*/
+.footer {
+  background-color: #000;
+  margin: 0;
+  margin-top: 30px;
+  padding: 0;
+  text-align: center;
+  align-flex: flex-end;
+  width: 100%;
+  border-top: 2px solid #fff;
+}
+
+.info {
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+.footer-info {
+  padding: 15px 0;
+  text-align: center;
+}
+
+.footer-info a {
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  text-decoration: none;
+}
+
+.footer-info a:hover {
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+}
+
+.upgrade {
+  height: 40px;
+  padding: 0;
+  margin: 5px 0;
+}
+
+.upgrade label {
+  top: 0;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.3);
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  width: 60%;
+}
+
+.footer .base-contact-social {
+  padding: 20px 0;
+  height: 80px;
+  text-align: center;
+}
+
+.footer .contact-social {
+  padding-left: 0;
+  margin: 0;
+}
+
+.footer .contact-social li {
+  margin-right: 10px;
+  padding-left: 10px;
+  display: inline-block;
+}
+
+.footer .contact-social a i {
+  border: none !important;
+  color: rgba(255, 255, 255, 0.5);
+  display: inline-block;
+  width: 100%;
+}
+
+.footer .contact-social a i:hover,
+.footer .contact-social a i:focus {
+  color: #fff;
+}

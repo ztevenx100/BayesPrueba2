@@ -1,0 +1,46 @@
+html {
+  overflow-x: hidden;
+}
+
+/*-------------------------------------------------------------------------------
+  Carrusel de imagenes
+-------------------------------------------------------------------------------*/
+
+#inicio {
+  width: 100%;
+  height: 100vh;
+}
+
+#inicio .carousel-item {
+  height: 100vh;
+  min-height: 300px;
+}
+
+#inicio .carousel-item img {
+  background-position: center center; /*centrada vertical y horizontal*/
+  background-repeat: no-repeat;
+  background-attachment: fixed; /*la imagen de fondo estÃ¡ fija en el viewport, de modo que no se mueva cuando la altura del contenido supere la altura de la imagen*/
+  background-size: cover; /*la imagen se reescala cuando cambia el ancho de ventana*/
+  width: 100%;
+  height: 100%;
+  transition: all 1s;
+}
+
+#inicio h3,
+#inicio h6,
+#inicio p {
+  font-weight: 700;
+  text-shadow: 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+#inicio p {
+  font-size: 10px;
+}
+
+#inicio h6 {
+  font-size: 20px;
+}
+
+#inicio h3 {
+  font-size: 40px;
+}

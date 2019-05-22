@@ -1,0 +1,137 @@
+<!--- Formulario
+    ================================================== -->
+
+<section id="form">
+	<div class="container">
+		<div class="row formulario">
+			<div class="col-12">
+				<h1>Sucesos</h1>
+				<form class="needs-validation">
+					<div class="form-group row">
+						<div class="col-sm-1"></div>
+						<label for="form-text" class="col-sm-4 col-form-label">Cantidad de sucesos<span>*</span></label>
+						<div class="col-sm-6">
+							<input type="tel" class="form-control" name="nEvents" #nEvents [(ngModel)]="nEvent" placeholder="N° de sucesos"
+							 onkeypress="return justNumbers(event);" required>
+							<div class="valid-feedback"></div>
+							<div class="invalid-feedback">Por favor digite un numero vlido.</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<div class="row formulario my-4">
+			<form class=" col-12" novalidate>
+				<div *ngFor="let item of numberEvents( nEvent ); let i = index ">
+					<div class="form-group row">
+
+						<!--- multi-probabilidad -->
+						<app-multi-probabilidad class="col-12" [valorMultiPro]="i" [events]="events" [namePro]="namePro" [totalName]="totalName"></app-multi-probabilidad>
+
+					</div>
+				</div>
+
+				<div class="form-group row mt-3">
+					<div class="col-3"></div>
+					<div class="col-6" *ngIf="nEvent > 0">
+						<button (click)="addGraph(nEvents, events)" class="btn btn-block">Graficar</button>
+					</div>
+				</div>
+
+			</form>
+		</div>
+
+		<!-- Grafico Bayes
+         ---------------------------------------------------------------------------------------------------------------------   
+        -->
+
+		<div class="row formulario my-4">
+
+			<div *ngFor="let item of events let i = index " class="col-{{ncol}} bg-dark" style="padding: 10px;">
+				<div class="container">
+					<div class="row" *ngFor="let it of numberEvents( n1[i] ); let x = index">
+						<div class="col-12 bg-warning">
+
+							<div class="container">
+								<div class="row" *ngFor="let it of numberEvents( events[i] ); let j = index " [ngStyle]="{'padding': (padding[i])+'px 0'}">
+									<div class="col-7 bg-white" [ngStyle]="{'padding': (padding[i]*20)+'px 0'}">
+										<div class="container">
+											<div class="row">
+												<label for="form-pass" class="col-6 col-form-label" style="font-size: 10px;">{{totalName[setPosition(i,j)].name}}</label>
+											</div>
+										</div>
+									</div>
+									<div class="col-3 bg-white" [ngStyle]="{'padding': (padding[i]*20)+'px 0'}">
+										<div class="container">
+											<div class="row">
+												<input type="tel" class="form-control" name="probability" #probability onkeypress="return justNumbers(event);">
+												<div class="
+                                                    valid-feedback"></div>
+												<div class="invalid-feedback">Por favor digite un numero vÃ¡lido.</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-2 bg-white" [ngStyle]="{'padding': (padding[i]*20)+'px 0'}">
+										<div class="container">
+											<div class="row">
+												<button (click)="setProbability(totalName[setPosition(i,j)].name, i, (x*events[i])+j, probability)" class="btn btn-block"><i
+													 class="fas fa-check"></i></button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="row formulario my-3">
+			<form class="col-12" novalidate>
+				<div class="form-group row mt-4">
+					<div class="col-3"></div>
+					<div class="col-6" *ngIf="btnCalcular">
+						<button (click)="getOptions()" class="btn btn-block">Calcular</button>
+					</div>
+				</div>
+			</form>
+		</div>
+
+		<!--Resultado bayes
+            --------------------------------------------------------------------------------------------------------------
+    -->
+
+		<div class="row formulario my-4" *ngIf="formOptions">
+			<div class="container">
+				<div class="row">
+
+					<select class="col-4 form-control input-lg" [(ngModel)]='idOption'>
+						<option *ngFor="let op of options" [ngValue]="op.id" style="font-size: 15px;">{{op.option}}</option>
+					</select>
+
+					<div class="col-6">
+						<div class="container">
+							<div class="row">
+								<div class="col-12 text-center" style="border-bottom: 1px solid #000; height: 19px; padding: 2px 0; font-size: 10px;">
+									{{this.options[getOptionId()].nprobParcial}} </div>
+								<div class="col-12 text-center" style="border-top: 1px solid #000; height: 19px; padding: 2px 0; font-size: 10px;">
+									{{options[getOptionId()].nprobTotal}} </div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-2" style="font-size: 20px; font-weight: 800; border: 1px #000 solid ; border-radius: 5px;">
+						= {{this.options[getOptionId()].totalBayes | number : '1.0-3' }}
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+</section>
