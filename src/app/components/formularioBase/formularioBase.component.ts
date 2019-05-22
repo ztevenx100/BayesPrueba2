@@ -122,9 +122,9 @@ export class FormularioBaseComponent implements OnInit {
     var t: number;
 
     for (let i = 0; i < this.totalName.length; i++) {
-      if (this.totalName[i] != null && this.totalName[i].positionN1 === 0) {
+      if (this.totalName[i] !== null && this.totalName[i].positionN1 === 0) {
         for (let j = 0; j < this.totalName.length; j++) {
-          if (this.totalName[j] != null && this.totalName[j].positionN1 === 1) {
+          if (this.totalName[j] !== null && this.totalName[j].positionN1 === 1) {
             this.options[this.nOption] = {
               id: "" + this.nOption + "",
               option:
@@ -160,7 +160,7 @@ export class FormularioBaseComponent implements OnInit {
 
     for (let i = 0; i < this.totalProbability.length; i++) {
       if (
-        this.totalProbability[i] != null &&
+        this.totalProbability[i] !== null &&
         this.totalProbability[i].positionN1 === 0
       ) {
         for (let j = 0; j < this.totalProbability.length; j++) {
