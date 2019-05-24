@@ -109,7 +109,6 @@ export class FormularioBaseComponent implements OnInit {
         this.j++;
       }
     }
-
     return this.name;
   }
 
@@ -121,8 +120,10 @@ export class FormularioBaseComponent implements OnInit {
     var total: number[] = [];
     var t: number;
 
+    
     for (let i = 0; i < this.totalName.length; i++) {
       if (this.totalName[i] !== null && this.totalName[i].positionN1 === 0) {
+        console.log(this.totalName[i].positionN1);
         for (let j = 0; j < this.totalName.length; j++) {
           if (this.totalName[j] !== null && this.totalName[j].positionN1 === 1) {
             this.options[this.nOption] = {
